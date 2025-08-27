@@ -94,7 +94,7 @@ if st.button("Fetch Data"):
                 views = int(stat["statistics"].get("viewCount", 0))
                 subs = int(channel["statistics"].get("subscriberCount", 0))
 
-                if subs < 1000:  # Only include channels with fewer than 1,000 subscribers
+                if subs < 5000:  # Only include channels with fewer than 5,000 subscribers
                     all_results.append({
                         "Title": title,
                         "Description": description,
@@ -116,7 +116,7 @@ if st.button("Fetch Data"):
                 )
                 st.write("---")
         else:
-            st.warning("No results found for channels with fewer than 1,000 subscribers.")
+            st.warning("No results found for channels with fewer than 5,000 subscribers.")
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
